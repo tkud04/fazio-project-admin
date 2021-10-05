@@ -484,7 +484,8 @@ public $smtpp = [
 			    'email' => "kudayisitobi@gmail.com",
 			  ];
 
-    
+    public $cities = ['Aberdeen', 'Armagh', 'Bangor', 'Bath', 'Belfast', 'Birmingham', 'Bradford', 'Brighton &amp; Hove', 'Bristol', 'Cambridge', 'Canterbury', 'Cardiff', 'Carlisle', 'Chelmsford', 'Chester', 'Chichester', 'Coventry', 'Derby', 'Derry', 'Dundee', 'Durham', 'Edinburgh', 'Ely', 'Exeter', 'Glasgow', 'Gloucester', 'Hereford', 'Inverness', 'Kingston upon Hull', 'Lancaster', 'Leeds', 'Leicester', 'Lichfield', 'Lincoln', 'Lisburn', 'Liverpool', 'City of London', 'Manchester', 'Newcastle upon Tyne', 'Newport', 'Newry', 'Norwich', 'Nottingham', 'Oxford', 'Perth', 'Peterborough', 'Plymouth', 'Portsmouth', 'Preston', 'Ripon', 'St Albans', 'St Asaph', 'St Davids', 'Salford', 'Salisbury', 'Sheffield', 'Southampton', 'Stirling', 'Stoke-on-Trent', 'Sunderland', 'Swansea', 'Truro', 'Wakefield', 'Wells', 'Westminster', 'Winchester', 'Wolverhampton', 'Worcester', 'York'];
+	
            
 		   #{'msg':msg,'em':em,'subject':subject,'link':link,'sn':senderName,'se':senderEmail,'ss':SMTPServer,'sp':SMTPPort,'su':SMTPUser,'spp':SMTPPass,'sa':SMTPAuth};
            function sendEmailSMTP($data,$view,$type="view")
@@ -666,18 +667,15 @@ $subject = $data['subject'];
 			   $avatarType = isset($data['avatar_type']) ? $data['avatar_type'] : "cloudinary";
 			   $pass = (isset($data['pass']) && $data['pass'] != "") ? bcrypt($data['pass']) : "";
 			   
-           	   $ret = User::create(['fname' => $data['fname'], 
-                                                      'lname' => $data['lname'], 
-                                                      'email' => $data['email'], 
-                                                      'phone' => $data['phone'], 
+           	   $ret = User::create(['email' => $data['email'], 
+                                                      'username' => $data['username'], 
                                                       'role' => $data['role'], 
                                                       'mode' => $data['mode'], 
-													  'mode_type' => $data['mode_type'], 
+                                                      'mode_type' => $data['mode_type'], 
                                                       'avatar' => $avatar, 
                                                       'avatar_type' => $avatarType, 
-                                                      'currency' => $data['currency'], 
-													  'host_upgraded' => "no", 
-                                                      'status' => $data['status'], 
+                                                      //'currency' => $data['currency'], 
+                                                     'status' => $data['status'], 
                                                       'verified' => $data['verified'], 
                                                       'password' => $pass, 
                                                       ]);
