@@ -90,7 +90,7 @@ class LoginController extends Controller {
 			$remember = true; 
              
          	//authenticate this login
-            if(Auth::attempt(['email' => $req['id'],'password' => $req['password'],'status'=> "enabled"],$remember) || Auth::attempt(['phone' => $req['id'],'password' => $req['password'],'status'=> "enabled"],$remember))
+            if(Auth::attempt(['email' => $req['id'],'password' => $req['password'],'status'=> "enabled"],$remember) || Auth::attempt(['username' => $req['id'],'password' => $req['password'],'status'=> "enabled"],$remember))
             {
             	//Login successful               
                $user = Auth::user();   
@@ -131,9 +131,8 @@ class LoginController extends Controller {
 		    $validator = Validator::make($dt, [
                              'pass' => 'required|min:7|confirmed',
                              'email' => 'required|email',                            
-                             'phone' => 'required|numeric',
-                             'fname' => 'required',
-                             'lname' => 'required'                  
+                             'username' => 'required'
+                                               
          ]);
          
          if($validator->fails())
@@ -145,10 +144,10 @@ class LoginController extends Controller {
          {
 			 $isNew = !$this->helpers->isDuplicateUser(['email' => $dt['email'], 'phone' => $dt['phone']]);
 			 
-            $dt['role'] = "user";    
+            $dt['role'] = "admin";    
             $dt['status'] = "enabled";           
-            $dt['mode'] = "guest";           
-            $dt['currency'] = "ngn";           
+            $dt['mode'] = "host";           
+            $dt['currency'] = "gbp";           
             $dt['verified'] = "yes";           
             
             # dd($isNew);            
