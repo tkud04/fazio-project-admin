@@ -62,7 +62,7 @@ class MainController extends Controller {
 			}
 			else
 			{
-				$u = "http://projectadmin.baradinnovations.com.ng";
+				$u = "http://project.baradinnovations.com.ng";
 				return redirect()->away($u);
 			}
 		}
