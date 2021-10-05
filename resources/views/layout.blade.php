@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-	<title>@yield('title') | Etuk NG Admin Center</title>
+	<title>@yield('title') | My Project - Admin Center</title>
 	
 	<!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}">
@@ -55,7 +55,7 @@ if(!isset($blank))
         <!-- ============================================================== -->
        <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="{{url('/')}}">ETUK NG</a>
+                <a class="navbar-brand" href="{{url('/')}}">My Project</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -203,7 +203,7 @@ if(!isset($blank))
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                             Copyright &copy; {{date("Y")}} Etuk NG. All rights reserved.
+                             Copyright &copy; {{date("Y")}} My Project. All rights reserved.
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="text-md-right footer-links d-none d-sm-block">
