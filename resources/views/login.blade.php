@@ -36,7 +36,7 @@ $blank = true;
                     {!! csrf_field() !!}
 					
 					<div class="form-group">
-                        <input class="form-control form-control-lg" name="id" id="login-id" type="text" placeholder="Email address" autocomplete="off">
+                        <input class="form-control form-control-lg" name="id" id="login-id" type="text" placeholder="Email address or username" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <input class="form-control form-control-lg" name="password" id="login-password" type="password" placeholder="Password">
@@ -54,9 +54,9 @@ $blank = true;
 							$twLogin = url('oauth')."?type=twitter";
 							$gLogin = url('oauth')."?type=google";
 							?>
-							  <a href="{{$fbLogin}}" class="btn btn-outline-primary">Facebook</a>
-							  <a href="{{$twLogin}}" class="btn btn-outline-primary">Twitter</a>
-							  <a href="{{$gLogin}}" class="btn btn-outline-danger">Google</a>
+							  <a href="javascript:void(0)" class="btn btn-outline-primary">Facebook</a>
+							  <a href="javascript:void(0)" class="btn btn-outline-primary">Twitter</a>
+							  <a href="javascript:void(0)" class="btn btn-outline-danger">Google</a>
 
 							
             </div>
